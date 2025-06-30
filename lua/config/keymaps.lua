@@ -1,0 +1,13 @@
+local telescope = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fc', function() telescope.find_files({cwd='~/.config/nvim/'}) end)
+vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
+
+vim.keymap.set("n", '<leader>o', function()
+  vim.cmd("vsplit")
+  require("oil").open()
+end)
+vim.keymap.set("n", '<leader>of', function()
+  vim.cmd("Oil --float .")
+end)
