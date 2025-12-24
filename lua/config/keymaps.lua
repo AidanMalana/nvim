@@ -4,10 +4,7 @@ vim.keymap.set('n', '<leader>fc', function() telescope.find_files({cwd='~/.confi
 vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
 
-vim.keymap.set("n", '<leader>o', function()
-  vim.cmd("vsplit")
-  require("oil").open()
-end)
-vim.keymap.set("n", '<leader>of', function()
-  vim.cmd("Oil --float .")
-end)
+vim.keymap.set('n', '<leader>fo', function() MiniFiles.open(vim.api.nvim_buf_get_name(0), false) end, {desc = 'Open MiniFiles'})
+
+vim.keymap.set('n', '<leader>nnp', ":NoNeckPain<CR>", {desc = 'Toggle NoNeckPain plugin'})
+vim.keymap.set('n', '<leader>c/', ":noh<CR>", {desc = 'Clear hlsearch highlights'})
