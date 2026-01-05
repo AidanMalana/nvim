@@ -1,1 +1,8 @@
-return { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}}
+return { 
+	"ellisonleao/gruvbox.nvim", 
+	priority = 1000,
+	config = function()
+		require("gruvbox").setup()
+		vim.cmd.colorscheme("oasis")
+	end
+}
